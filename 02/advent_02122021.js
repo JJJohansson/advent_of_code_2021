@@ -31,5 +31,5 @@
 		if (direction.match('up')) aim -= value;
 		if (direction.match('down')) aim += value;
 	}
-	console.log('Answer for the first one is', horizontalPos * depth);
+	console.log('Answer for the second one is', horizontalPos * depth);
 })();
