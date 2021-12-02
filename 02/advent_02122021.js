@@ -7,10 +7,10 @@
 	let depth = 0;
 	for (const move of moves) {
 		const direction = move.split(' ')[0];
-		const value = parseInt(move.split(' ')[1]);
-		if (direction.match('forward')) horizontalPos += value;
-		if (direction.match('up')) depth -= value;
-		if (direction.match('down')) depth += value;
+		const distance = parseInt(move.split(' ')[1]);
+		if (direction.match('forward')) horizontalPos += distance;
+		if (direction.match('up')) depth -= distance;
+		if (direction.match('down')) depth += distance;
 	}
 	console.log('Answer for the first task is', horizontalPos * depth);
 })();
@@ -23,13 +23,13 @@
 	let aim = 0;
 	for (const move of moves) {
 		const direction = move.split(' ')[0];
-		const amount = parseInt(move.split(' ')[1]);
+		const distance = parseInt(move.split(' ')[1]);
 		if (direction.match('forward')) {
-			horizontalPos += amount;
-			depth += (aim * amount);
+			horizontalPos += distance;
+			depth += (aim * distance);
 		}
-		if (direction.match('up')) aim -= amount;
-		if (direction.match('down')) aim += amount;
+		if (direction.match('up')) aim -= distance;
+		if (direction.match('down')) aim += distance;
 	}
 	console.log('Answer for the second task is', horizontalPos * depth);
 })();
