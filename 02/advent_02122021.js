@@ -2,7 +2,7 @@
 
 // FIRST TASK
 (() => {
-	const moves = document.querySelector("pre").textContent.toString().split('\n');
+	const moves = document.querySelector("pre").textContent.split('\n');
 	let horizontalPos = 0;
 	let depth = 0;
 	for (let move of moves) {
@@ -21,7 +21,7 @@
 	let horizontalPos = 0;
 	let depth = 0;
 	let aim = 0;
-	for (let move of moves) {
+	for (const move of moves) {
 		const direction = move.split(' ')[0];
 		const value = parseInt(move.split(' ')[1]);
 		if (direction.match('forward')) {

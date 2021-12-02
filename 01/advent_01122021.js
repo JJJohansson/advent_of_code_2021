@@ -2,9 +2,8 @@
 
 // FIRST TASK
 (() => {
-	const measurements = document.querySelector("pre").textContent.toString().split('\n').map(Number);
+	const measurements = document.querySelector("pre").textContent.split('\n').map(Number);
 	let answer = 0;
-
 	for (let i = 0; i < measurements.length; i++) {
 		if (measurements[i] > measurements[i-1]) {
 			answer++;
@@ -15,10 +14,9 @@
 
 // SECOND TASK
 (() => {
-	const measurements = document.querySelector("pre").textContent.toString().split('\n').map(Number);
+	const measurements = document.querySelector("pre").textContent.split('\n').map(Number);
 	let answer = 0;
 	let oldWindowSum = 0;
-
 	for (let i = 1; i < measurements.length-2; i++) {
 		let windowSum = measurements[i-1] + measurements[i] + measurements[i+1];
 		if (oldWindowSum != 0 && oldWindowSum < windowSum) answer++;
