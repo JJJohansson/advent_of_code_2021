@@ -2,15 +2,15 @@
 
 // FIRST TASK
 (() => {
-	let diagnostics = document.querySelector("pre").textContent.split('\n');
-	const binaryLength = diagnostics[0].length;
+	let diagnosticReports = document.querySelector("pre").textContent.split('\n');
+	const binaryLength = diagnosticReports[0].length;
 	let gammaRate = "", epsilonRate = "";
 
 	for (let i = 0; i < binaryLength; i++) {
 		let zeros = 0;
 		let ones = 0;
-		for (let j = 0; j < diagnostics.length; j++) {
-			parseInt(diagnostics[j].charAt(i)) === 0 ? zeros++ : ones++;
+		for (let j = 0; j < diagnosticReports.length; j++) {
+			parseInt(diagnosticReports[j].charAt(i)) === 0 ? zeros++ : ones++;
 		}
 		zeros > ones ? gammaRate += "0" : gammaRate += "1";
 	}
