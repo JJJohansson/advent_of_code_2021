@@ -4,8 +4,7 @@
 (() => {
 	let diagnostics = document.querySelector("pre").textContent.split('\n');
 	const binaryLength = diagnostics[0].length;
-	let gammaRate = "";
-	let epsilonRate = "";
+	let gammaRate = "", epsilonRate = "";
 
 	for (let i = 0; i < binaryLength; i++) {
 		let zeros = 0;
@@ -16,7 +15,7 @@
 		zeros > ones ? gammaRate += "0" : gammaRate += "1";
 	}
 	for (let k = 0; k < gammaRate.length; k++) {
-		gammaRate.charAt(k) === "1" ? epsilonRate+="0" : epsilonRate+="1";
+		gammaRate.charAt(k) === "1" ? epsilonRate += "0" : epsilonRate += "1";
 	}
     const answer = parseInt(gammaRate, 2) * parseInt(epsilonRate, 2);
 	console.log('Answer for the first task is', answer);
@@ -31,13 +30,10 @@
 			let startsWithOne = [], startsWithZero = [];
 
 			for (const diagnostic of filteredDiagnosticReports) {
-				diagnostic.charAt(i) == "1" ?
-                    startsWithOne.push(diagnostic) :
-                    startsWithZero.push(diagnostic);
-			}
+                diagnostic.charAt(i) == "1" ? startsWithOne.push(diagnostic) : startsWithZero.push(diagnostic);
+            }
 
             const moreOrEqualAmountOfOnes = startsWithOne.length >= startsWithZero.length;
-			
             getOxygenRating
                 ? moreOrEqualAmountOfOnes ? filteredDiagnosticReports = startsWithOne : filteredDiagnosticReports = startsWithZero
                 : moreOrEqualAmountOfOnes ? filteredDiagnosticReports = startsWithZero : filteredDiagnosticReports = startsWithOne;
